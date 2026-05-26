@@ -8,3 +8,5 @@ export type ProductType = {
   colors: string[];
   images: Record<string, string>;
 };
+
+export type ProductsType = ProductType[]
