@@ -1,6 +1,8 @@
 "use client"
 
-const ProductCard = () => {
+import { ProductType } from "@/types"
+
+const ProductCard = ({product}:{product:ProductType}) => {
     return (
         <div className=''>ProductCard</div>
     )
