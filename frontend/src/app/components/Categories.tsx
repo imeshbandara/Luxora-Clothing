@@ -54,10 +54,19 @@ const categories = [
   },
 ];
 
+
+
 const Categories = () => {
     return (
-        <div className=''>Categories</div>
-    )
-}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 bg-gray-100 p-2 rounded-lg mb-4 text-sm">
+    {categories.map((category) => (
+    <div className="flex items-center justify-center gap-2 cursor-pointer px-2 py-1 rounded-md" key={category.name}>
+        {category.icon}
+        {category.name}
+    </div>
+))}
+</div>
+);
+};
 
-export default Categories
+export default Categories;
