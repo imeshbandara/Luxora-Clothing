@@ -57,7 +57,7 @@ const ProductInteraction = ({
           {product.sizes.map((size) => (
             <div
               className={`cursor-pointer border-1 p-[2px] ${
-                selectedSize === size ? "border-zinc-900 dark:border-zinc-100" : "border-gray-300 dark:border-zinc-700"
+                selectedSize === size ? "border-zinc-900 dark:border-slate-100" : "border-gray-300 dark:border-[#1f2d5a]"
               }`}
               key={size}
               onClick={() => handleTypeChange("size", size)}
@@ -65,8 +65,8 @@ const ProductInteraction = ({
               <div
                 className={`w-6 h-6 text-center flex items-center justify-center ${
                   selectedSize === size
-                    ? "bg-black text-white dark:bg-zinc-100 dark:text-zinc-950"
-                    : "bg-white text-black dark:bg-zinc-800 dark:text-zinc-100"
+                    ? "bg-black text-white dark:bg-slate-100 dark:text-[#0a1128]"
+                    : "bg-white text-black dark:bg-[#1c2541] dark:text-slate-100"
                 }`}
               >
                 {size.toUpperCase()}
@@ -82,7 +82,7 @@ const ProductInteraction = ({
           {product.colors.map((color) => (
             <div
               className={`cursor-pointer border-1 p-[2px] ${
-                selectedColor === color ? "border-gray-300 dark:border-zinc-500" : "border-white dark:border-zinc-950"
+                selectedColor === color ? "border-gray-300 dark:border-slate-400" : "border-white dark:border-[#0a1128]"
               }`}
               key={color}
               onClick={() => handleTypeChange("color", color)}
@@ -97,14 +97,14 @@ const ProductInteraction = ({
         <span className="text-gray-500">Quantity</span>
         <div className="flex items-center gap-2">
           <button
-            className="cursor-pointer border-1 border-gray-300 dark:border-zinc-700 p-1"
+            className="cursor-pointer border-1 border-gray-300 dark:border-[#1f2d5a] p-1"
             onClick={() => handleQuantityChange("decrement")}
           >
             <Minus className="w-4 h-4" />
           </button>
           <span>{quantity}</span>
           <button
-            className="cursor-pointer border-1 border-gray-300 dark:border-zinc-700 p-1"
+            className="cursor-pointer border-1 border-gray-300 dark:border-[#1f2d5a] p-1"
             onClick={() => handleQuantityChange("increment")}
           >
             <Plus className="w-4 h-4" />
@@ -114,12 +114,12 @@ const ProductInteraction = ({
       {/* BUTTONS */}
       <button
         onClick={handleAddToCart}
-        className="bg-gray-800 dark:bg-zinc-100 text-white dark:text-zinc-900 hover:bg-gray-900 dark:hover:bg-white px-4 py-2 rounded-md shadow-lg flex items-center justify-center gap-2 cursor-pointer text-sm font-medium transition-all duration-200"
+        className="bg-gray-800 dark:bg-slate-100 text-white dark:text-[#0a1128] hover:bg-black dark:hover:bg-slate-50 px-4 py-2 rounded-md shadow-lg flex items-center justify-center gap-2 cursor-pointer text-sm font-medium transition-all duration-200"
       >
         <Plus className="w-4 h-4" />
         Add to Cart
       </button>
-      <button className="ring-1 ring-gray-400 dark:ring-zinc-600 shadow-lg text-gray-800 dark:text-zinc-200 hover:bg-gray-50 dark:hover:bg-zinc-900 px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 text-sm font-medium transition-all duration-200">
+      <button className="ring-1 ring-gray-400 dark:ring-[#1f2d5a] shadow-lg text-gray-800 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-[#131a30] px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 text-sm font-medium transition-all duration-200">
         <ShoppingCart className="w-4 h-4" />
         Buy this Item
       </button>
