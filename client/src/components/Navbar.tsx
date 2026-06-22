@@ -11,7 +11,7 @@ const Navbar = () => {
       <Link href="/" className="flex items-center">
         <Image
           src="/logo.png"
-          alt="TrendLama"
+          alt="Luxora-Clothing"
           width={36}
           height={36}
           className="w-6 h-6 md:w-9 md:h-9"
