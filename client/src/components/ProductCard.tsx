@@ -1,6 +1,6 @@
 "use client";
 
-
+import useCartStore from "@/stores/cartStore";
 import { ProductType } from "@/types";
 import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     color: product.colors[0],
   });
 
-  
+  const { addToCart } = useCartStore();
 
   const handleProductType = ({
     type,

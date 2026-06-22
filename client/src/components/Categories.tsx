@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import {
   Footprints,
   Glasses,
@@ -53,8 +52,6 @@ const categories = [
     slug: "gloves",
   },
 ];
-
-
 
 const Categories = () => {
   const searchParams = useSearchParams();
