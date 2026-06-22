@@ -40,7 +40,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
   };
 
   return (
-    <div className="shadow-lg rounded-lg overflow-hidden">
+    <div className="shadow-lg rounded-lg overflow-hidden bg-white dark:bg-zinc-900 border border-transparent dark:border-zinc-800">
       {/* IMAGE */}
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[2/3]">
@@ -54,8 +54,8 @@ const ProductCard = ({ product }: { product: ProductType }) => {
       </Link>
       {/* PRODUCT DETAIL */}
       <div className="flex flex-col gap-4 p-4">
-        <h1 className="font-medium">{product.name}</h1>
-        <p className="text-sm text-gray-500">{product.shortDescription}</p>
+        <h1 className="font-medium text-zinc-900 dark:text-zinc-100">{product.name}</h1>
+        <p className="text-sm text-gray-500 dark:text-zinc-400">{product.shortDescription}</p>
         {/* PRODUCT TYPES */}
         <div className="flex items-center gap-4 text-xs">
           {/* SIZES */}
@@ -64,13 +64,13 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <select
               name="size"
               id="size"
-              className="ring ring-gray-300 rounded-md px-2 py-1"
+              className="ring ring-gray-300 dark:ring-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-md px-2 py-1 outline-none"
               onChange={(e) =>
                 handleProductType({ type: "size", value: e.target.value })
               }
             >
               {product.sizes.map((size) => (
-                <option key={size} value={size}>
+                <option key={size} value={size} className="bg-white dark:bg-zinc-850">
                   {size.toUpperCase()}
                 </option>
               ))}
@@ -84,8 +84,8 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                 <div
                   className={`cursor-pointer border-1 ${
                     productTypes.color === color
-                      ? "border-gray-400"
-                      : "border-gray-200"
+                      ? "border-gray-400 dark:border-zinc-400"
+                      : "border-gray-200 dark:border-zinc-700"
                   } rounded-full p-[1.2px]`}
                   key={color}
                   onClick={() =>
@@ -103,10 +103,10 @@ const ProductCard = ({ product }: { product: ProductType }) => {
         </div>
         {/* PRICE AND ADD TO CART BUTTON */}
         <div className="flex items-center justify-between">
-          <p className="font-medium">${product.price.toFixed(2)}</p>
+          <p className="font-medium text-zinc-900 dark:text-zinc-100">${product.price.toFixed(2)}</p>
           <button
             onClick={handleAddToCart}
-            className="ring-1 ring-gray-200 shadow-lg rounded-md px-2 py-1 text-sm cursor-pointer hover:text-white hover:bg-black transition-all duration-300 flex items-center gap-2"
+            className="ring-1 ring-gray-200 dark:ring-zinc-700 shadow-lg text-zinc-800 dark:text-zinc-200 bg-white dark:bg-zinc-800 rounded-md px-2 py-1 text-sm cursor-pointer hover:text-white dark:hover:text-black hover:bg-black dark:hover:bg-white transition-all duration-300 flex items-center gap-2"
           >
             <ShoppingCart className="w-4 h-4" />
             Add to Cart
